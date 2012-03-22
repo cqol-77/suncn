@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>按需调整模块位置</title>
+</head>
+<body>
+<div class="ms-box">
+	<ul class="ms-list" id="ms-list">
+		<li class="mod1" sortnum="5">我要排第五位</li>
+		<li class="mod2" sortnum="4">第四是我的</li>
+		<li class="mod3" sortnum="3">三号在哪里</li>
+		<li class="mod4" sortnum="2">我最二</li>
+		<li class="mod5" sortnum="8">我有八，一定发</li>
+		<li class="mod5" sortnum="1">Number One</li>
+		<li class="mod5" sortnum="0">我是鸭蛋（零）</li>
+		<li class="mod5" sortnum="9">九九归一</li>
+	</ul>
+</div>
+<input type="button" value="点击重排" id="sort">
+<script type="text/javascript">
+var modSort = function(id,tag,prop){
+	this.box = document.getElementById(id);
+	this.tag = tag;
+	this.arr = this.box.getElementsByTagName(this.tag);
+	this.prop = prop;
+	this.init();
+};
+modSort.prototype = {
+	init:function(){
+		var _this = this,len = _this.arr.length,temp = 0,nums = [];
+		for(var i = 0; i < len; i++){
+			nums.push(parseInt(_this.arr[i].getAttribute(_this.prop)));
+		}
+		for(var i = 0; i < len; i++){
+			for(var j = 0; j < len - 1; j++){
+				if(nums[j] > nums[j + 1]){
+					temp = nums[j];
+					nums[j] = nums[j + 1];
+					nums[j + 1] = temp;
+				}
+			}
+		}
+		for(var i = 0; i < len; i++){
+			for(var j = 0; j < len; j++){
+				if(nums[i] == parseInt(_this.arr[j].getAttribute(_this.prop))){
+					_this.box.insertBefore(_this.arr[j],_this.arr[i]);
+				}
+			}
+		}
+	}
+}
+document.getElementById("sort").onclick = function(){
+	new modSort("ms-list","li","sortnum");
+}
+</script>
+</body>
+</html>
