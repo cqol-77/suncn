@@ -1,7 +1,7 @@
 var my_zen_settings = {
 	'html': {
 		'abbreviations': {
-			'jq': '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>',
+			'jq': '<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>',
 			'kissy': '<script type="text/javascript" src="http://a.tbcdn.cn/??s/kissy/1.1.6/kissy-min.js"></script>',
 			'yui': '<script type="text/javascript" src="http://a.tbcdn.cn/tbra/1.0/tbra-aio.js"></script>',
 			'a':'<a href="#|" target="_blank">',
