@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Waterfall代码</title>
+</head>
+<body>
+<style type="text/css">
+.wf-main{
+    position: relative;
+    margin: 0 auto;
+    width: 990px;
+    overflow: hidden;
+}
+.wf-main .wf-cld{
+    position: absolute;
+    margin-bottom: 10px;
+    width: 200px;
+    left: -9999px;
+    top: -9999px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+</style>
+<div class="wf-main" id="wf-main">
+    <div class="wf-cld">1</div>
+    <div class="wf-cld">2<br>2<br>2<br>3</div>
+    <div class="wf-cld">3<br>4<br>4<br>3<br>3<br>1<br>2</div>
+    <div class="wf-cld">4<br>4<br>4</div>
+    <div class="wf-cld">5<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">6<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">7<br>4<br>4</div>
+    <div class="wf-cld">8<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">9<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">10<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+</div>
+<script type="text/javascript">
+function Waterfall(param){
+    this.id = typeof param.container == 'string' ? document.getElementById(param.container) :param.container;
+    this.colWidth = param.colWidth;
+    this.colCount = param.colCount;
+    this.init();
+}
+Waterfall.prototype = {
+    getByClass:function(cls,p){
+        var arr = [],reg = new RegExp("(^|\s+)" + cls + "(\s+|$)","g");
+        var nodes = p.getElementsByTagName("*"),len = nodes.length;
+        for(var i = 0; i < len; i++){
+            if(reg.test(nodes[i].className)){
+                arr.push(nodes[i]);
+                reg.lastIndex = i;
+            }
+        }
+        return arr;
+    },
+    sort:function(arr,array){
+        var len = arr.length,temp = '';
+        for(var ii= 0; ii < len; ii++){
+            for(var j = 0; j < len - 1; j++){
+                if(parseInt(arr[j].h) < parseInt(arr[j + 1].h)){
+                    temp = array[j];
+                    array[j] = array[j +1 ];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        /*for(var ii = 0; ii < len; ii++){
+            arr[array[ii]].index = ii + 1;
+        }*/
+        return array;
+    },
+    maxArr:function(arr){
+        var len = arr.length,temp = arr[0].h;
+        for(var ii= 1; ii < len; ii++){
+            if(temp < arr[ii].h){
+                temp = arr[ii].h;
+            }
+        }
+        return temp;
+    },
+    init:function(){
+        var _this = this;
+        var col = [],iArr = [];
+        var nodes = _this.getByClass('wf-cld',_this.id),len = nodes.length;
+        for(var i = 0; i < _this.colCount; i++){
+            col[i] = new Object();
+            col[i].h = 0;
+        }
+        for(var i = 0; i < len; i++){
+            nodes[i].h = nodes[i].offsetHeight + 10;
+            iArr[i] = i;
+        }
+        var newArr = _this.sort(nodes,iArr);
+
+        for(var i = 0; i < len; i++){
+            nodes[newArr[i]].group = i % _this.colCount;
+        }
+        for(var i = 0; i < len; i++){
+            nodes[i].style.left = nodes[i].group * _this.colWidth + "px";
+            nodes[i].style.top = col[nodes[i].group].h + "px";
+            col[nodes[i].group].h += nodes[i].h;
+        }
+        _this.id.style.height = _this.maxArr(col) + "px";
+    }
+};
+new Waterfall({
+    "container":"wf-main",
+    "colWidth":210,
+    "colCount":4
+});
+</script>
+</body>
+</html>
