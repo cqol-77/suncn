@@ -39,11 +39,11 @@
     <div class="wf-cld">18<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">19<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">20<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
-	<div class="wf-cld">21<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">21<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">22<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">23<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">24<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
-	<div class="wf-cld">11<br>2<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">11<br>2<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">12<br>2<br>2<br>3<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">13<br>4<br>4<br>3<br>3<br>1<br>2<br>4<br>4<br>4<br>4<br>4<br>4</div>
     <div class="wf-cld">14<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
@@ -81,9 +81,6 @@ Waterfall.prototype = {
                 }
             }
         }
-        /*for(var ii = 0; ii < len; ii++){
-            arr[array[ii]].index = ii + 1;
-        }*/
         return array;
     },
     maxArr:function(arr){
@@ -95,22 +92,21 @@ Waterfall.prototype = {
         }
         return temp;
     },
-	getMar:function(node){
-		var dis = 0;
-		if(node.currentStyle){
-			dis = parseInt(node.currentStyle.marginBottom);
-		}else if(document.defaultView){
-			dis = parseInt(document.defaultView.getComputedStyle(node,null).marginBottom);
-		}
-		return dis;
-	},
+    getMar:function(node){
+        var dis = 0;
+        if(node.currentStyle){
+            dis = parseInt(node.currentStyle.marginBottom);
+        }else if(document.defaultView){
+            dis = parseInt(document.defaultView.getComputedStyle(node,null).marginBottom);
+        }
+        return dis;
+    },
     init:function(){
         var _this = this;
         var col = [],iArr = [];
         var nodes = _this.getByClass('wf-cld',_this.id),len = nodes.length;
         for(var i = 0; i < _this.colCount; i++){
             col[i] = 0;
-            //col[i].h = 0;
         }
         for(var i = 0; i < len; i++){
             nodes[i].h = nodes[i].offsetHeight + _this.getMar(nodes[i]);
