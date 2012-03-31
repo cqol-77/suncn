@@ -15,7 +15,8 @@
 .wf-main .wf-cld{
     position: absolute;
     margin-bottom: 10px;
-    width: 200px;
+	padding:5px 8px;
+    width: 214px;
     left: -9999px;
     top: -9999px;
     border: 1px solid #999;
@@ -25,16 +26,30 @@
 }
 </style>
 <div class="wf-main" id="wf-main">
-    <div class="wf-cld">1</div>
-    <div class="wf-cld">2<br>2<br>2<br>3</div>
-    <div class="wf-cld">3<br>4<br>4<br>3<br>3<br>1<br>2</div>
-    <div class="wf-cld">4<br>4<br>4</div>
+    <div class="wf-cld"><h2 style="color:#f50">1、瀑布流</h2></div>
+    <div class="wf-cld">2<br>2</div>
+    <div class="wf-cld">3<br>4<br>4</div>
+    <div class="wf-cld">4<br>4<br>4<br>4</div>
     <div class="wf-cld">5<br>4<br>4<br>4<br>4</div>
-    <div class="wf-cld">6<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
-    <div class="wf-cld">7<br>4<br>4</div>
-    <div class="wf-cld">8<br>4<br>4<br>4<br>4<br>4<br>4</div>
-    <div class="wf-cld">9<br>4<br>4<br>4<br>4</div>
-    <div class="wf-cld">10<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">6<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">7<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">8<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">9<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">10<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">18<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">19<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">20<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+	<div class="wf-cld">21<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">22<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">23<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">24<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+	<div class="wf-cld">11<br>2<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">12<br>2<br>2<br>3<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">13<br>4<br>4<br>3<br>3<br>1<br>2<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">14<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">15<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">16<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
+    <div class="wf-cld">17<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4<br>4</div>
 </div>
 <script type="text/javascript">
 function Waterfall(param){
@@ -72,24 +87,33 @@ Waterfall.prototype = {
         return array;
     },
     maxArr:function(arr){
-        var len = arr.length,temp = arr[0].h;
+        var len = arr.length,temp = arr[0];
         for(var ii= 1; ii < len; ii++){
-            if(temp < arr[ii].h){
-                temp = arr[ii].h;
+            if(temp < arr[ii]){
+                temp = arr[ii];
             }
         }
         return temp;
     },
+	getMar:function(node){
+		var dis = 0;
+		if(node.currentStyle){
+			dis = parseInt(node.currentStyle.marginBottom);
+		}else if(document.defaultView){
+			dis = parseInt(document.defaultView.getComputedStyle(node,null).marginBottom);
+		}
+		return dis;
+	},
     init:function(){
         var _this = this;
         var col = [],iArr = [];
         var nodes = _this.getByClass('wf-cld',_this.id),len = nodes.length;
         for(var i = 0; i < _this.colCount; i++){
-            col[i] = new Object();
-            col[i].h = 0;
+            col[i] = 0;
+            //col[i].h = 0;
         }
         for(var i = 0; i < len; i++){
-            nodes[i].h = nodes[i].offsetHeight + 10;
+            nodes[i].h = nodes[i].offsetHeight + _this.getMar(nodes[i]);
             iArr[i] = i;
         }
         var newArr = _this.sort(nodes,iArr);
@@ -99,15 +123,15 @@ Waterfall.prototype = {
         }
         for(var i = 0; i < len; i++){
             nodes[i].style.left = nodes[i].group * _this.colWidth + "px";
-            nodes[i].style.top = col[nodes[i].group].h + "px";
-            col[nodes[i].group].h += nodes[i].h;
+            nodes[i].style.top = col[nodes[i].group] + "px";
+            col[nodes[i].group] += nodes[i].h;
         }
         _this.id.style.height = _this.maxArr(col) + "px";
     }
 };
 new Waterfall({
     "container":"wf-main",
-    "colWidth":210,
+    "colWidth":244,
     "colCount":4
 });
 </script>
